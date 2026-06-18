@@ -1,0 +1,1076 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --success-color: #2ecc71;
+    --warning-color: #f1c40f;
+    --background-color: #f8f9fa;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --hover-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, var(--background-color) 0%, #ffffff 100%);
+    color: var(--primary-color);
+    line-height: 1.6;
+}
+
+.navbar {
+    background: linear-gradient(90deg, var(--primary-color) 0%, #34495e 100%);
+    padding: 1rem;
+    box-shadow: var(--card-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    color: white !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.5px;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 2rem;
+    transition: all var(--transition-speed) ease;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #2980b9 100%);
+    color: white;
+    border-radius: 20px 20px 0 0 !important;
+    padding: 1.5rem;
+    font-weight: 600;
+}
+
+.form-control, .form-select {
+    border-radius: 15px;
+    border: 2px solid #e9ecef;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    transition: all var(--transition-speed) ease;
+    font-size: 1rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #2980b9 100%);
+    border: none;
+    border-radius: 15px;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    transition: all var(--transition-speed) ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2980b9 0%, var(--secondary-color) 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%) rotate(35deg);
+    transition: transform var(--transition-speed) ease;
+}
+
+.btn-primary:hover::after {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.output-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-top: 2rem;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(10px);
+}
+
+.treatment-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-left: 6px solid var(--secondary-color);
+    box-shadow: var(--card-shadow);
+    transition: all var(--transition-speed) ease;
+}
+
+.treatment-card:hover {
+    transform: translateX(5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.lab-recommendations {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.prescription-section {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+    border: 2px solid #e9ecef;
+}
+
+.symptom-item {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+    background-color: #f8f9fa;
+    transition: background-color 0.2s ease;
+}
+
+.symptom-item:hover {
+    background-color: #e9ecef;
+}
+
+.symptom-item .form-check-input {
+    margin-right: 0.5rem;
+}
+
+.symptom-item .form-check-label {
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+.custom-symptom {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.custom-symptom .input-group {
+    margin-bottom: 0.5rem;
+}
+
+.custom-symptom .form-control {
+    border-radius: 5px 0 0 5px;
+}
+
+.custom-symptom .btn {
+    border-radius: 0 5px 5px 0;
+}
+
+.symptom-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+}
+
+.symptom-list li {
+    padding: 0.25rem 0;
+    color: #495057;
+}
+
+.symptom-list li:before {
+    content: "•";
+    color: var(--secondary-color);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.treatment-details {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.hair-cycle-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #e9ecef;
+}
+
+.hair-cycle-card h5 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.progress-container {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 2rem 0;
+    height: 8px;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary-color) 0%, var(--success-color) 100%);
+    transition: width 0.5s ease;
+    border-radius: 10px;
+}
+
+.tab-content {
+    padding: 2rem 0;
+}
+
+.nav-tabs {
+    border: none;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    font-weight: 600;
+    color: var(--primary-color);
+    transition: all var(--transition-speed) ease;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.nav-tabs .nav-link.active {
+    color: white;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #2980b9 100%);
+    transform: translateY(-2px);
+}
+
+.nav-tabs .nav-link:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+.info-icon {
+    color: var(--secondary-color);
+    margin-left: 0.5rem;
+    cursor: help;
+}
+
+.treatment-type {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.treatment-type h6 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.prevention-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #e9ecef;
+}
+
+.prevention-card h5 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.prevention-list {
+    list-style: none;
+    padding: 0;
+}
+
+.prevention-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.prevention-list li:last-child {
+    border-bottom: none;
+}
+
+.prevention-list li i {
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+}
+
+.procedure-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #e9ecef;
+}
+
+.procedure-card h5 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.cause-list {
+    list-style: none;
+    padding: 0;
+}
+
+.cause-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.cause-list li:last-child {
+    border-bottom: none;
+}
+
+.cause-list li i {
+    color: var(--accent-color);
+    margin-right: 0.5rem;
+}
+
+.lifestyle-recommendations {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #e9ecef;
+}
+
+.lifestyle-recommendations h5 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.lifestyle-list {
+    list-style: none;
+    padding: 0;
+}
+
+.lifestyle-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+}
+
+.lifestyle-list li:last-child {
+    border-bottom: none;
+}
+
+.lifestyle-list li i {
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+}
+
+.hair-loss-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--secondary-color);
+    font-size: 2rem;
+}
+
+.hair-loss-image img {
+    max-height: 300px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.5s ease;
+    background-color: #f8f9fa;
+}
+
+.hair-loss-image img.error {
+    object-fit: contain;
+    padding: 1rem;
+}
+
+.hair-loss-image img:hover {
+    transform: scale(1.05);
+}
+
+.image-caption {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 0.5rem;
+}
+
+.treatment-card img {
+    max-height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Hair Cycle Section */
+.phase-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border: none;
+    box-shadow: var(--card-shadow);
+    height: 100%;
+    transition: all var(--transition-speed) ease;
+}
+
+.phase-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.phase-image {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.phase-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Classification Section */
+.classification-section,
+.trichoscopy-section {
+    margin-bottom: 2rem;
+}
+
+.classification-section .card,
+.trichoscopy-section .card {
+    height: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.classification-section .card-header,
+.trichoscopy-section .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.classification-section .badge {
+    font-size: 0.9rem;
+    padding: 0.6em 1.2em;
+    border-radius: 10px;
+    margin: 0.25rem;
+    transition: all var(--transition-speed) ease;
+}
+
+.classification-section .badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.classification-section .badge.bg-secondary {
+    background-color: #6c757d !important;
+}
+
+.classification-section .badge.bg-info {
+    background-color: #17a2b8 !important;
+}
+
+.trichoscopy-section .list-unstyled {
+    margin-bottom: 0;
+}
+
+.trichoscopy-section .fa-circle {
+    font-size: 0.5rem;
+    vertical-align: middle;
+}
+
+.trichoscopy-section .fa-check {
+    color: #28a745;
+}
+
+.treatment-item {
+    padding: 1rem;
+    border-radius: 0.25rem;
+    background-color: #f8f9fa;
+    margin-bottom: 1rem;
+}
+
+.treatment-item:last-child {
+    margin-bottom: 0;
+}
+
+.treatment-item strong {
+    color: #495057;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.treatment-item p {
+    margin-bottom: 0.25rem;
+    color: #6c757d;
+}
+
+.treatment-item .text-muted {
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .card-header {
+        padding: 1rem;
+    }
+    
+    .btn-primary {
+        padding: 0.8rem 1.5rem;
+    }
+    
+    .nav-tabs .nav-link {
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+/* Clinical Findings Section */
+.finding-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--card-shadow);
+    height: 100%;
+    transition: all var(--transition-speed) ease;
+}
+
+.finding-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.finding-card h6 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+/* TrichoTest Section */
+.finding-details {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.finding-details h6 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Images */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Section Headers */
+.section-header {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.loading-spinner {
+    animation: pulse 1.5s infinite;
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .btn-primary,
+    .nav-tabs {
+        display: none;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #dee2e6;
+    }
+    
+    .treatment-card {
+        break-inside: avoid;
+    }
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+    --primary-color: #ecf0f1;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --background-color: #2c3e50;
+    --card-bg: #34495e;
+    --text-color: #ecf0f1;
+    --border-color: #4a6278;
+}
+
+.dark-mode body {
+    background: linear-gradient(135deg, var(--background-color) 0%, #2c3e50 100%);
+    color: var(--text-color);
+}
+
+.dark-mode .card {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+.dark-mode .card-header {
+    background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+}
+
+.dark-mode .form-control,
+.dark-mode .form-select {
+    background-color: #2c3e50;
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.dark-mode .form-control:focus,
+.dark-mode .form-select:focus {
+    background-color: #2c3e50;
+    border-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.dark-mode .form-floating label {
+    color: #95a5a6;
+}
+
+.dark-mode .nav-tabs .nav-link {
+    color: var(--text-color);
+    background: rgba(52, 73, 94, 0.5);
+}
+
+.dark-mode .nav-tabs .nav-link.active {
+    background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+    color: white;
+}
+
+.dark-mode .list-group-item {
+    background-color: var(--card-bg);
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+.dark-mode .text-muted {
+    color: #95a5a6 !important;
+}
+
+/* Toast Notifications */
+.toast-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #2980b9 100%);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.toast-notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 100%;
+    width: 2px;
+    background: var(--secondary-color);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-left: 3rem;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--secondary-color) 0%, #2980b9 100%);
+    border: 4px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.timeline-content p {
+    color: #6c757d;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+.dark-mode .timeline-content {
+    background: var(--card-bg);
+}
+
+.dark-mode .timeline-marker {
+    border-color: var(--card-bg);
+}
+
+/* Enhanced Progress Bar */
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--secondary-color) 0%, var(--success-color) 100%);
+    transition: width 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.2) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 2s infinite;
+}
+
+.progress-bar.completed::after {
+    animation: celebrate 1s ease-out;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes celebrate {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* Enhanced Form Styles */
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    color: var(--secondary-color);
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+
+.form-floating > .form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(52, 152, 219, 0.25);
+}
+
+.symptoms-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.dark-mode .symptoms-container {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced Button Styles */
+.btn-outline-light {
+    border-width: 2px;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Print Styles */
+@media print {
+    .progress-container,
+    .toast-notification {
+        display: none;
+    }
+}
+
+/* Prescription Styles */
+.prescription-section,
+.lab-recommendations {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--card-shadow);
+}
+
+.prescription-header h4,
+.lab-header h4 {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.treatment-item,
+.lab-test-item {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 1rem;
+    height: 100%;
+    transition: all var(--transition-speed) ease;
+}
+
+.treatment-item:hover,
+.lab-test-item:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--hover-shadow);
+}
+
+.treatment-detail {
+    margin-top: 0.5rem;
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+}
+
+.signature-line {
+    width: 200px;
+    height: 2px;
+    background: #dee2e6;
+    margin: 1rem 0 0.5rem auto;
+}
+
+.lab-test-item i {
+    font-size: 1.1rem;
+}
+
+/* Dark Mode Adjustments */
+.dark-mode .prescription-section,
+.dark-mode .lab-recommendations {
+    background: var(--card-bg);
+    border-color: var(--border-color);
+}
+
+.dark-mode .treatment-item,
+.dark-mode .lab-test-item {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode .signature-line {
+    background: var(--border-color);
+}
+
+/* Print Styles for Prescriptions */
+@media print {
+    .prescription-section,
+    .lab-recommendations {
+        box-shadow: none;
+        border: 1px solid #dee2e6;
+    }
+
+    .treatment-item,
+    .lab-test-item {
+        break-inside: avoid;
+    }
+}
+
+/* Image Upload Styles */
+.image-upload-container {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.current-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.current-image img {
+    max-height: 200px;
+    width: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.current-image img:hover {
+    transform: scale(1.05);
+}
+
+.upload-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.dark-mode .image-upload-container {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .current-image {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Main Image Upload Styles */
+.upload-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.upload-preview {
+    width: 100%;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.upload-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.upload-preview img:hover {
+    transform: scale(1.05);
+}
+
+.dark-mode .upload-section {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.dark-mode .upload-preview {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.patient-photo {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+}
+
+.patient-photo h5 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+.dark-mode .patient-photo {
+    background: var(--card-bg);
+} 
